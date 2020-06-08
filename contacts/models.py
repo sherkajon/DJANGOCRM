@@ -20,4 +20,7 @@ class Contact(models.Model):
     organization = models.ForeignKey(Organization, null=True, on_delete=models.SET_NULL)
 
 
-
+class Menu(models.Model):
+    title = models.CharField(max_length=40)
+    link = models.URLField()
+    alt = models.CharField(max_length=100)
