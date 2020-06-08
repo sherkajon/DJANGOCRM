@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block pagebody %}
+
+    <h1>Contacts</h1>
+
+    <table class="table table-responsive table-hover table-alter">
+
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+        </tr>
+
+        {% for contact in contacts %}
+
+        <tr>
+            <td>{{ contact.firstname }}</td>
+            <td>{{ contact.lastname }}</td>
+            <td>{{ contact.email }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+
+{% endblock %}
