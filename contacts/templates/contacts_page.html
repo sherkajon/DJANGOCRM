@@ -4,20 +4,24 @@
 
     <h1>Contacts</h1>
 
-    <table class="table table-responsive table-hover table-alter">
+    <p class="text-right"><a href="{% url 'createContact' %}">Create new Contact</a></p>
 
-        <tr>
+    <table class="table table-hover table-alter">
+        <thead class="thead-dark">
+        <tr class="success">
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Email</th>
+            <th>Action</th>
         </tr>
-
+        </thead>
         {% for contact in contacts %}
 
         <tr>
             <td>{{ contact.firstname }}</td>
             <td>{{ contact.lastname }}</td>
             <td>{{ contact.email }}</td>
+            <td><a class="btn btn-sm btn-info" href="{% url 'updateContact' contact.id %}">Update</a></td>
         </tr>
 
         {% endfor %}
